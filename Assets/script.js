@@ -32,7 +32,7 @@ const saveFavoriteButton = document.getElementById('saveFavoriteButton');
 
 pairingButton.addEventListener('click', () => {
     // Fetch data from the Cocktail API
-    fetch('https://www.thecocktaildb.com/api.php')
+    fetch('www.thecocktaildb.com/api/json/v1/1/random.php')
       .then(response => response.json())
       .then(cocktailData => {
         // Process the cocktail data
@@ -40,7 +40,7 @@ pairingButton.addEventListener('click', () => {
         const cocktailInstructions = cocktailData.instructions; // Replace 'instructions' with the actual property in your API response
 
         // Fetch data from the Meal API
-    fetch('https://www.themealdb.com/api.php')
+    fetch('www.themealdb.com/api/json/v1/1/random.php')
           .then(response => response.json())
           .then(mealData => {
             // Process the meal data
