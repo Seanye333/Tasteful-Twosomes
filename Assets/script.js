@@ -15,37 +15,47 @@
 //  14. Select and click on pairing on the scroll window to display different recipes on the recipe display windows 
 
 // Get the button element - note change startbutton to HTML element name 
-const startButton = document.getElementById('startButton');
+//const startButton = document.getElementById('startButton');
 // Add click event listener to the button
-startButton.addEventListener('click', () => {
+//startButton.addEventListener('click', () => {
   // Navigate to the next page - change 'next-page.html' to second page HTML name 
-  window.location.href = 'generator.html';
+  //window.location.href = 'generator.html';
    
-});
+//});
 
 // second page - in HTML - add <button id="pairingButton">Generate Pairing</button><textarea id="pairingTextBox" rows="5"></textarea>
 const pairingButton = document.getElementById('pairingButton');
-const foodRecipeTextBox = document.getElementById('');
-const cocktailRecipeTextBox = document.getElementById('');
+const foodRecipeTextBox = document.getElementById('foodRecipeTextBox');
+const cocktailRecipeTextBox = document.getElementById('cocktailRecipeTextBox');
 const pairingTextBox = document.getElementById('pairingTextBox');
 const saveFavoriteButton = document.getElementById('saveFavoriteButton');
 
 pairingButton.addEventListener('click', () => {
     // Fetch data from the Cocktail API
-    fetch('www.thecocktaildb.com/api/json/v1/1/random.php')
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
       .then(response => response.json())
       .then(cocktailData => {
+        console.log(cocktailData)
         // Process the cocktail data
-        const cocktailName = cocktailData.name; // Replace 'name' with the actual property in your API response
-        const cocktailInstructions = cocktailData.instructions; // Replace 'instructions' with the actual property in your API response
+        const cocktailName = cocktailData.drinks[0].strDrink; // Replace 'name' with the actual property in your API response
+        console.log(cocktailName)
+        const cocktailInstructions = cocktailData.drinks[0].strInstructions; // Replace 'instructions' with the actual property in your API response
+        console.log(cocktailInstructions)
+        const cocktailPicture = cocktailData.drinks[0].strDrinkThumb
+        console.log(cocktailPicture)
 
         // Fetch data from the Meal API
-    fetch('www.themealdb.com/api/json/v1/1/random.php')
+    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
           .then(response => response.json())
           .then(mealData => {
+            console.log(mealData)
             // Process the meal data
-            const mealName = mealData.name; // Replace 'name' with the actual property in your API response
-            const mealInstructions = mealData.instructions; // Replace 'instructions' with the actual property in your API response
+            const mealName = mealData.meals[0].strMeal; // Replace 'name' with the actual property in your API response
+            console.log(mealName)
+            const mealInstructions = mealData.meals[0].strInstructions; // Replace 'instructions' with the actual property in your API response
+            console.log(mealInstructions)
+            const mealPicture = mealData.meals[0].strMealThumb
+            console.log(mealPicture)
             // Generate pairing text
             const pairingText = `Food: ${mealName}\n\n${mealInstructions}\n\nDrink: ${cocktailName}\n\n${cocktailInstructions}`;
             // Display pairing text in the text box
