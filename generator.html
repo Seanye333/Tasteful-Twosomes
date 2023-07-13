@@ -39,27 +39,30 @@
     <!-- Main Content -->
     <div class="w-3/4 bg-white p-8">
       <!-- Centered Text Box at the top -->
+      <!-- pairing button -->
       <div class="text-center mt-8">
-        <button class="bg-teal-950 hover:bg-teal-400 text-white font-bold py-2 px-8 rounded">
+        <button id="pairingButton" class="bg-teal-950 hover:bg-teal-400 text-white font-bold py-2 px-8 rounded">
           Create a random food pairing
         </button>
       </div>
 
       <!-- Two Centered Text Boxes below -->
+      <!-- food recipe box -->
       <div class="flex justify-between mt-8">
         <div class="max-w-md mx-auto bg-white rounded p-8 shadow-md text-center">
           <h2 class="text-xl font-bold mb-6">Food</h2>
-          <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p id="foodRecipeTextBox" class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
+        <!-- drink recipe box -->
         <div class="max-w-md mx-auto bg-white rounded p-8 shadow-md text-center">
           <h2 class="text-xl font-bold mb-6">Drink</h2>
-          <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p id="cocktailRecipeTextBox"class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
 
-      <!-- Submit Button at the bottom -->
+      <!-- Save to Favorite Button at the bottom -->
       <div class="text-center mt-8">
-        <button class="bg-teal-950 hover:bg-teal-400 text-white font-bold py-2 px-8 rounded">Save to favorites</button>
+        <button id="saveFavoriteButton "class="bg-teal-950 hover:bg-teal-400 text-white font-bold py-2 px-8 rounded">Save to favorites</button>
       </div>
     </div>
   </div>
@@ -70,6 +73,6 @@
       <p class="text-center">&copy; 2023 Tasteful Twosomes. Created by Ye Yuxiang, Tyler Kieras, Bradley Dinnan, and Alex Tester. All rights reserved.</p>
     </div>
   </footer>
-
+  <script src="Assets/script.js"></script>
 </body>
 </html>
