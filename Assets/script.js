@@ -72,6 +72,26 @@ pairingButton.addEventListener('click', () => {
             console.log(mealInstructions)
             const mealPicture = mealData.meals[0].strMealThumb
             console.log(mealPicture)
+
+            const foodIngredients = [];
+            for (let i = 1; i <= 20; i++) {
+              const ingredientFood = mealData.meals[0][`strIngredient${i}`];
+              const measureFood = mealData.meals[0][`strMeasure${i}`];
+              
+              if (ingredientFood && measureFood) {
+                foodIngredients.push(`${measureFood} ${ingredientFood}`);
+                
+              } else {
+                break;
+              }
+            }
+            console.log(foodIngredients)
+            foodRecipeTextBox.value=foodIngredients;
+
+            const foodRecipeText = `Food: ${ingredientFood}\n\n${measureFood}`;
+            foodRecipeTextBox.value = foodRecipeText;
+            console.log(foodIngredients)
+
             // Generate pairing text
             const pairingText = `Food: ${mealName}\n\n${mealInstructions}\n\nDrink: ${cocktailName}\n\n${cocktailInstructions}`;
             // Display pairing text in the text box
