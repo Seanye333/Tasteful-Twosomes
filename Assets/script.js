@@ -29,6 +29,8 @@ const foodRecipeTextBox = document.getElementById('foodRecipeTextBox');
 const cocktailRecipeTextBox = document.getElementById('cocktailRecipeTextBox');
 const pairingTextBox = document.getElementById('pairingTextBox');
 const saveFavoriteButton = document.getElementById('saveFavoriteButton');
+const mealImageEl = document.getElementById('mealImageEl');
+const drinkImageEl = document.getElementById('drinkImageEl');
 
 pairingButton.addEventListener('click', () => {
     // Fetch data from the Cocktail API
@@ -43,7 +45,21 @@ pairingButton.addEventListener('click', () => {
         console.log(cocktailInstructions)
         const cocktailPicture = cocktailData.drinks[0].strDrinkThumb
         console.log(cocktailPicture)
-
+        // Collect cocktail ingredients
+        const cocktailIngredients = [];
+        for (let i = 1; i <= 15; i++) {
+          const ingredient = cocktailData.drinks[0][`strIngredient${i}`];
+          const measure = cocktailData.drinks[0][`strMeasure${i}`];
+          
+          if (ingredient) {
+            cocktailIngredients.push(`${measure} ${ingredient}`);
+          } else {
+            break;
+          }
+        }
+            const cocktailRecipeText = `Drink: ${cocktailName}\n\n${cocktailInstructions}`;
+            cocktailRecipeTextBox.value = cocktailRecipeText;
+            console.log(cocktailIngredients)
         // Fetch data from the Meal API
     fetch('https://www.themealdb.com/api/json/v1/1/random.php')
           .then(response => response.json())
