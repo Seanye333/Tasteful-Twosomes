@@ -14,13 +14,6 @@
 // 	13. User can also use the search tool right below the recipe pairings to display favorite recipes
 //  14. Select and click on pairing on the scroll window to display different recipes on the recipe display windows 
 
-// Get the button element - note change startbutton to HTML element name 
-//const startButton = document.getElementById('startButton');
-// Add click event listener to the button
-//startButton.addEventListener('click', () => {
-  // Navigate to the next page - change 'next-page.html' to second page HTML name 
-  //window.location.href = 'generator.html';
-   
 //});
 
 // second page - in HTML - add <button id="pairingButton">Generate Pairing</button><textarea id="pairingTextBox" rows="5"></textarea>
