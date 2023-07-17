@@ -59,9 +59,10 @@ pairingButton.addEventListener('click', () => {
             break;
           }
         }
-            const cocktailRecipeText = `Drink: ${cocktailName}\n\n${cocktailInstructions}`;
-            cocktailRecipeTextBox.value = cocktailRecipeText;
-            console.log(cocktailIngredients)
+        
+        cocktailRecipeTextBox.innerHTML = cocktailIngredients;
+        console.log(cocktailIngredients)
+
         // Fetch data from the Meal API
     fetch('https://www.themealdb.com/api/json/v1/1/random.php')
           .then(response => response.json())
@@ -92,11 +93,8 @@ pairingButton.addEventListener('click', () => {
               }
             }
             console.log(foodIngredients)
-            foodRecipeTextBox.value=foodIngredients;
-
-            const foodRecipeText = `Food: ${ingredientFood}\n\n${measureFood}`;
-            foodRecipeTextBox.value = foodRecipeText;
-            console.log(foodIngredients)
+ 
+            foodRecipeTextBox.innerHTML = foodIngredients;
 
             // Generate pairing text
             const pairingText = `Food: ${mealName}\n\n${mealInstructions}\n\nDrink: ${cocktailName}\n\n${cocktailInstructions}`;
