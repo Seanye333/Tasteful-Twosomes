@@ -24,6 +24,10 @@ const pairingTextBox = document.getElementById('pairingTextBox');
 const saveFavoriteButton = document.getElementById('saveFavoriteButton');
 const mealImageEl = document.getElementById('mealImageEl');
 const drinkImageEl = document.getElementById('drinkImageEl');
+const mealNameEl = document.getElementById('mealNameEl')
+const drinkNameEl = document.getElementById('drinkNameEl')
+const mealIngredientEl = dpcument.getElementById('mealIngredientEl')
+const drinkIngredientEl = dpcument.getElementById('drinkIngredientEl')
 
 pairingButton.addEventListener('click', () => {
     // Fetch data from the Cocktail API
