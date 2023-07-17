@@ -41,11 +41,11 @@ pairingButton.addEventListener('click', () => {
         // Collect cocktail ingredients
         const cocktailIngredients = [];
         for (let i = 1; i <= 15; i++) {
-          const ingredient = cocktailData.drinks[0][`strIngredient${i}`];
-          const measure = cocktailData.drinks[0][`strMeasure${i}`];
+          const ingredientCocktail = cocktailData.drinks[0][`strIngredient${i}`];
+          const measureCocktail = cocktailData.drinks[0][`strMeasure${i}`];
           
-          if (ingredient) {
-            cocktailIngredients.push(`${measure} ${ingredient}`);
+          if (ingredientCocktail && measureCocktail) {
+            cocktailIngredients.push(`${measureCocktail} ${ingredientCocktail}`);
           } else {
             break;
           }
