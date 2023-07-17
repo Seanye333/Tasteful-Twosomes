@@ -24,10 +24,10 @@ const pairingTextBox = document.getElementById('pairingTextBox');
 const saveFavoriteButton = document.getElementById('saveFavoriteButton');
 const mealImageEl = document.getElementById('mealImageEl');
 const drinkImageEl = document.getElementById('drinkImageEl');
-const mealNameEl = document.getElementById('mealNameEl')
-const drinkNameEl = document.getElementById('drinkNameEl')
-const mealIngredientEl = dpcument.getElementById('mealIngredientEl')
-const drinkIngredientEl = dpcument.getElementById('drinkIngredientEl')
+const mealNameEl = document.getElementById('mealNameEl');
+const drinkNameEl = document.getElementById('drinkNameEl');
+const mealIngredientEl = document.getElementById('mealIngredientEl');
+const drinkIngredientEl = document.getElementById('drinkIngredientEl');
 
 pairingButton.addEventListener('click', () => {
     // Fetch data from the Cocktail API
@@ -42,6 +42,11 @@ pairingButton.addEventListener('click', () => {
         console.log(cocktailInstructions)
         const cocktailPicture = cocktailData.drinks[0].strDrinkThumb
         console.log(cocktailPicture)
+
+        drinkNameEl.innerHTML = cocktailName;
+        cocktailRecipeTextBox.innerHTML = cocktailInstructions;
+        drinkImageEl.src = cocktailPicture;
+
         // Collect cocktail ingredients
         const cocktailIngredients = [];
         for (let i = 1; i <= 15; i++) {
@@ -69,6 +74,10 @@ pairingButton.addEventListener('click', () => {
             console.log(mealInstructions)
             const mealPicture = mealData.meals[0].strMealThumb
             console.log(mealPicture)
+
+            mealNameEl.innerHTML = mealName;
+            foodRecipeTextBox.innerHTML = mealInstructions;
+            mealImageEl.src = mealPicture;
 
             const foodIngredients = [];
             for (let i = 1; i <= 20; i++) {
