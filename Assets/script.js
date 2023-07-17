@@ -60,7 +60,7 @@ pairingButton.addEventListener('click', () => {
           }
         }
         
-        cocktailRecipeTextBox.innerHTML = cocktailIngredients;
+        drinkIngredientEl.innerHTML = cocktailIngredients;
         console.log(cocktailIngredients)
 
         // Fetch data from the Meal API
@@ -94,7 +94,7 @@ pairingButton.addEventListener('click', () => {
             }
             console.log(foodIngredients)
  
-            foodRecipeTextBox.innerHTML = foodIngredients;
+            mealIngredientEl.innerHTML = foodIngredients;
 
             // Generate pairing text
             const pairingText = `Food: ${mealName}\n\n${mealInstructions}\n\nDrink: ${cocktailName}\n\n${cocktailInstructions}`;
