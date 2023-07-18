@@ -53,7 +53,7 @@ pairingButton.addEventListener('click', () => {
           const ingredientCocktail = cocktailData.drinks[0][`strIngredient${i}`];
           const measureCocktail = cocktailData.drinks[0][`strMeasure${i}`];
           
-          if (ingredientCocktail && measureCocktail) {
+          if (ingredientCocktail || measureCocktail) {
             cocktailIngredients.push(`${measureCocktail} ${ingredientCocktail}`);
           } else {
             break;
@@ -85,7 +85,7 @@ pairingButton.addEventListener('click', () => {
               const ingredientFood = mealData.meals[0][`strIngredient${i}`];
               const measureFood = mealData.meals[0][`strMeasure${i}`];
               
-              if (ingredientFood && measureFood) {
+              if (ingredientFood || measureFood) {
                 foodIngredients.push(`${measureFood} ${ingredientFood}`);
                 
               } else {
