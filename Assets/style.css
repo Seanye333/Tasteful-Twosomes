@@ -4,25 +4,35 @@ h3 {
 
 #drinkNameEl, #mealNameEl {
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 20px;
     background-color: #4caf50;
     color: white;
     border: none;
-    cursor: pointer;
 }
 
 #mealImageEl, #drinkImageEl{
     padding: 8px 16px;
-    font-size: 14px;
-    color: white;
     border: none;
     cursor: pointer;
 }
 
 #drinkIngredientEl, #mealIngredientEl,#foodRecipeTextBox,#cocktailRecipeTextBox{
     padding: 8px 16px;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
+    font-size: 13px;
     border: 3px solid #a3c519;
+    cursor: pointer;
+}
+
+
+/* adding hover effect to projects' images */
+#mealImageEl:hover, #drinkImageEl:hover {
+    color:rgb(238, 227, 78);
+    box-shadow: 0 5px 15px rgb(238, 227, 78);
+    transition: flex-basis 500ms linear;
+}
+
+#drinkIngredientEl:hover, #mealIngredientEl:hover,#foodRecipeTextBox:hover,#cocktailRecipeTextBox:hover{
+    color:rgb(60, 160, 226);
+    box-shadow: 0 5px 15px rgb(224, 96, 22);
+    transition: flex-basis 500ms linear;
 }
