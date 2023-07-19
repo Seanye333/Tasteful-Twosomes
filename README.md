@@ -31,6 +31,10 @@ https://www.thecocktaildb.com/api.php
 
 https://www.themealdb.com/api.php
 
+https://tailwindcss.com/
+
+https://developer.mozilla.org/en-US/
+
 
 ## License
 Please refer to the License in the repository. 
