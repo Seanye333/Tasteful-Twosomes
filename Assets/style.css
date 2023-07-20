@@ -36,3 +36,16 @@ h3 {
     box-shadow: 0 5px 15px rgb(224, 96, 22);
     transition: flex-basis 500ms linear;
 }
+
+
+/* layput for mobile devices */
+@media screen and (max-width: 767px) {
+    #mainPage{
+        flex-direction: column;
+    } 
+
+    #searchSizeBar{
+        display: flex;
+        justify-content: center;
+    }
+}
