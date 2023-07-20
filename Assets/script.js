@@ -115,3 +115,33 @@ pairingButton.addEventListener('click', () => {
         console.error('Error fetching Cocktail API:', error);
       });
   });
+
+
+  
+  // Function to save the current pairing to local storage and create the "Show Favorite Recipe" button
+  function saveToLocalStorage(pairingData) {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    favorites.push(pairingData);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    
+  }
+  
+  // Event listener for the "Create a random food pairing" button
+  saveFavoriteButton.addEventListener('click', () => {
+    // ... (existing code for fetching APIs and generating a random pairing)
+  
+    // Generate pairing object
+    const pairingData = {
+      foodName: mealNameEl.innerHTML,
+      foodInstructions: foodRecipeTextBox.innerHTML,
+      foodIngredients: mealIngredientEl.innerHTML,
+      foodImage: mealImageEl.src,
+      drinkName: drinkNameEl.innerHTML,
+      drinkInstructions: cocktailRecipeTextBox.innerHTML,
+      drinkIngredients: drinkIngredientEl.innerHTML,
+      drinkImage: drinkImageEl.src,
+    };
+  
+    // Save the pairing to local storage
+    saveToLocalStorage(pairingData);
+  });
