@@ -1,83 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./dist/output.css" rel="stylesheet">
-  <link rel="stylesheet" href="./Assets/style.css">
-  <title>Tasteful Twosomes Generator</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./dist/output.css" rel="stylesheet">
+	<link rel="stylesheet" href="./Assets/style.css">
+	<title>Tasteful Twosomes Generator</title>
 </head>
-<body>
-  <!-- Header Section -->
-  <header class="bg-teal-700 text-white py-2 px-4">
-    <!-- Website Name -->
-    <h1 class="font-bold text-center text-3xl">Tasteful Twosomes</h1>
-  </header>
+<body class="flex-col min-h-screen">
+	<!-- Header Section -->
+	<header class="bg-teal-700 text-white py-2 px-4">
+		<!-- Website Name -->
+		<h1 class="font-bold text-center text-3xl">Tasteful Twosomes</h1>
+	</header>
 
-  <!-- Main Content Container -->
-  <div id="mainPage" class="container mx-auto mt-8 flex" style="background-color: #f2f2f2; padding: 5px;">
+	<!-- Main Content Container -->
+	<div id="mainPage" class="container mx-auto mt-8 flex" style="background-color: #f2f2f2; padding: 5px;">
+		<!-- Sidebar Container -->
+		<div>
+			<!-- Sidebar Content -->
+			<div id="sidebarEl" class="w-1/4 bg-white p-4 border border-gray-300 flex-col align-items-center">
+				<h2 id="favoriteH2">Favorite Combinations:</h2>
+				<div id="favoritesEl"></div>
+				<button id="clear">Clear Favorites</button>
+			</div>
+		</div>
 
-    <!-- Sidebar Container -->
-    <div id="searchSizeBar">
-      <!-- Sidebar Content -->
-      <div class="w-1/4 bg-gray-100 p-4 border border-gray-300">
-        <!-- Text Box at the top -->
-        <div class="mb-4">
-          <input type="text" class="border border-gray-300 rounded px-3 py-2 w-full" placeholder="Stored recipes here">
-        </div>
-      
-        <!-- Search Bar at the bottom -->
-        <div class="flex items-center">
-          <input type="text" class="border border-gray-300 rounded-l px-3 py-2 w-full" placeholder="Search">
-          <button class="bg-teal-700 text-white px-4 py-2 rounded-r">Search</button>
-        </div>
-      </div>
-    </div>
+		<!-- Main Content -->
+		<div class="w-auto bg-white p-8 mx-auto">
+			<!-- Pairing Button -->
+			<div class="text-center mt-8">
+				<button id="pairingButton" class="bg-teal-950 hover:bg-teal-400 text-white font-bold py-2 px-8 rounded">
+					Create a random food pairing
+				</button>
+			</div>
 
-    <!-- Main Content -->
-    <div class="w-auto bg-white p-8 mx-auto">
-      <!-- Pairing Button -->
-      <div class="text-center mt-8">
-        <button id="pairingButton" class="bg-teal-950 hover:bg-teal-400 text-white font-bold py-2 px-8 rounded">
-          Create a random food pairing
-        </button>
-      </div>
+			<!-- Food and Drink Recipe Boxes -->
+			<div class="flex justify-between mt-8">
+				<!-- Food Recipe Box -->
+				<div class="max-w-md mx-auto bg-white rounded p-8 shadow-md text-center">
+					<h2 id="mealNameEl" class="text-xl font-bold mb-6">Food</h2>
+					<img id="mealImageEl" src="" alt="">
+					<h3>Ingredients</h3>
+					<ul id="mealIngredientEl"></ul>
+					<h3>Instructions</h3>
+					<p id="foodRecipeTextBox" class="text-gray-700"></p>
+				</div>
+				<!-- Drink Recipe Box -->
+				<div class="max-w-md mx-auto bg-white rounded p-8 shadow-md text-center">
+					<h2 id="drinkNameEl" class="text-xl font-bold mb-6">Drink</h2>
+					<img id="drinkImageEl" src="" alt="">
+					<h3>Ingredients</h3>
+					<ul id="drinkIngredientEl"></ul>
+					<h3>Instructions</h3>
+					<p id="cocktailRecipeTextBox" class="text-gray-700"></p>
+				</div>
+			</div>
 
-      <!-- Food and Drink Recipe Boxes -->
-      <div class="flex justify-between mt-8">
-        <!-- Food Recipe Box -->
-        <div class="max-w-md mx-auto bg-white rounded p-8 shadow-md text-center">
-          <h2 id="mealNameEl" class="text-xl font-bold mb-6">Food</h2>
-          <img id="mealImageEl" src="" alt="">
-          <h3>Ingredients</h3>
-          <ul id="mealIngredientEl"></ul>
-          <h3>Instructions</h3>
-          <p id="foodRecipeTextBox" class="text-gray-700"></p>
-        </div>
-        <!-- Drink Recipe Box -->
-        <div class="max-w-md mx-auto bg-white rounded p-8 shadow-md text-center">
-          <h2 id="drinkNameEl" class="text-xl font-bold mb-6">Drink</h2>
-          <img id="drinkImageEl" src="" alt="">
-          <h3>Ingredients</h3>
-          <ul id="drinkIngredientEl"></ul>
-          <h3>Instructions</h3>
-          <p id="cocktailRecipeTextBox" class="text-gray-700"></p>
-        </div>
-      </div>
+			<!-- Save to Favorite Button -->
+			<div class="text-center mt-8">
+				<button id="saveFavoriteButton" class="bg-teal-950 hover:bg-teal-400 text-white font-bold py-2 px-8 rounded">Save to favorites</button>
+			</div>
+		</div>
+	</div>
 
-      <!-- Save to Favorite Button -->
-      <div class="text-center mt-8">
-        <button id="saveFavoriteButton" class="bg-teal-950 hover:bg-teal-400 text-white font-bold py-2 px-8 rounded">Save to favorites</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer Section -->
-  <footer class="bg-teal-700 text-white py-4 px-10">
-    <div class="container mx-auto">
-      <p class="text-center">&copy; 2023 Tasteful Twosomes. Created by Yuxiang Ye, Tyler Kieras, Bradley Dinnan, and Alex Tester. All rights reserved.</p>
-    </div>
-  </footer>
-  <script src="Assets/script.js"></script>
+	<!-- Footer Section -->
+	<footer class="bg-teal-700 text-white py-4 px-10">
+		<div class="container mx-auto">
+			<p class="text-center">&copy; 2023 Tasteful Twosomes. Created by Yuxiang Ye, Tyler Kieras, Bradley Dinnan, and Alex Tester. All rights reserved.</p>
+		</div>
+	</footer>
+	<script src="Assets/script.js"></script>
 </body>
 </html>

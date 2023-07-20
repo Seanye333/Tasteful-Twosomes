@@ -1,51 +1,96 @@
+/* CSS Styles for Tasteful Twosomes Generator */
+
+/* Heading styles for h3 elements */
 h3 {
-    font-weight: bold;
+	font-weight: bold;
 }
 
+/* Styling for drinkNameEl and mealNameEl elements */
 #drinkNameEl, #mealNameEl {
-    padding: 8px 16px;
-    font-size: 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
+	padding: 8px 16px;
+	font-size: 20px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
 }
 
-#mealImageEl, #drinkImageEl{
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
+/* Styling for mealImageEl and drinkImageEl elements */
+#mealImageEl, #drinkImageEl {
+	padding: 8px 16px;
+	border: none;
+	cursor: pointer;
 }
 
-#drinkIngredientEl, #mealIngredientEl,#foodRecipeTextBox,#cocktailRecipeTextBox{
-    padding: 8px 16px;
-    font-size: 13px;
-    border: 3px solid #a3c519;
-    cursor: pointer;
+/* Styling for drinkIngredientEl, mealIngredientEl, foodRecipeTextBox, and cocktailRecipeTextBox elements */
+#drinkIngredientEl, #mealIngredientEl, #foodRecipeTextBox, #cocktailRecipeTextBox {
+	padding: 8px 16px;
+	font-size: 13px;
+	border: 3px solid #a3c519;
+	cursor: pointer;
 }
 
-
-/* adding hover effect to projects' images */
+/* Adding hover effect to mealImageEl and drinkImageEl elements */
 #mealImageEl:hover, #drinkImageEl:hover {
-    color:rgb(238, 227, 78);
-    box-shadow: 0 5px 15px rgb(238, 227, 78);
-    transition: flex-basis 500ms linear;
+	color: rgb(238, 227, 78);
+	box-shadow: 0 5px 15px rgb(238, 227, 78);
+	transition: flex-basis 500ms linear;
 }
 
-#drinkIngredientEl:hover, #mealIngredientEl:hover,#foodRecipeTextBox:hover,#cocktailRecipeTextBox:hover{
-    color:rgb(60, 160, 226);
-    box-shadow: 0 5px 15px rgb(224, 96, 22);
-    transition: flex-basis 500ms linear;
+/* Adding hover effect to drinkIngredientEl, mealIngredientEl, foodRecipeTextBox, and cocktailRecipeTextBox elements */
+#drinkIngredientEl:hover, #mealIngredientEl:hover, #foodRecipeTextBox:hover, #cocktailRecipeTextBox:hover {
+	color: rgb(60, 160, 226);
+	box-shadow: 0 5px 15px rgb(224, 96, 22);
+	transition: flex-basis 500ms linear;
 }
 
+/* Styling for the favorite buttons in favorites list */
+.favorite-btn {
+	background-color: #4caf50;
+	color: white;
+	padding: 2px 5px;
+	display: block;
+	margin: 4px 0;
+	border-radius: 5px;
+	font-size: 12px;
+}
 
-/* layput for mobile devices */
+/* Styling for the clear button */
+#clear {
+	background-color: rgb(22, 70, 78);
+	color: white;
+	padding: 2px 5px;
+	display: inline-block;
+	margin: 4px 0;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+/* Styling for the favoriteH2 element */
+#favoriteH2 {
+	background-color: rgb(22, 70, 78);
+	color: white;
+	padding: 2px 5px;
+	display: inline-block;
+	margin: 4px 0;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+/* Styling for the sidebarEl element */
+#sidebarEl {
+	border-radius: 5px;
+}
+
+/* Layout for mobile devices */
 @media screen and (max-width: 767px) {
-    #mainPage{
-        flex-direction: column;
-    } 
+	/* Adjusting the layout for mainPage on small screens */
+	#mainPage {
+		flex-direction: column;
+	}
 
-    #searchSizeBar{
-        display: flex;
-        justify-content: center;
-    }
+	/* Centering the searchSizeBar on small screens */
+	#searchSizeBar {
+		display: flex;
+		justify-content: center;
+	}
 }
