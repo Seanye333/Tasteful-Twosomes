@@ -92,18 +92,62 @@ function saveToLocalStorage(pairingData) {
 // Event listener for the "Create a random food pairing" button.
 // Fetches APIs, generates a random pairing, and saves it to local storage.
 saveFavoriteButton.addEventListener('click', () => {
-	// Generate pairing object
-	const pairingData = {
-		foodName: mealNameEl.innerHTML,
-		foodInstructions: foodRecipeTextBox.innerHTML,
-		foodIngredients: mealIngredientEl.innerHTML,
-		foodImage: mealImageEl.src,
-		drinkName: drinkNameEl.innerHTML,
-		drinkInstructions: cocktailRecipeTextBox.innerHTML,
-		drinkIngredients: drinkIngredientEl.innerHTML,
-		drinkImage: drinkImageEl.src,
-	};
-
-	// Save the pairing to local storage
-	saveToLocalStorage(pairingData);
-});
+    // Generate pairing object
+    const pairingData = {
+      foodName: mealNameEl.innerHTML,
+      foodInstructions: foodRecipeTextBox.innerHTML,
+      foodIngredients: mealIngredientEl.innerHTML,
+      foodImage: mealImageEl.src,
+      drinkName: drinkNameEl.innerHTML,
+      drinkInstructions: cocktailRecipeTextBox.innerHTML,
+      drinkIngredients: drinkIngredientEl.innerHTML,
+      drinkImage: drinkImageEl.src,
+    };
+  
+    // Save the pairing to local storage
+    saveToLocalStorage(pairingData);
+  
+    // Clear the searchHistory element
+    searchHistory.innerHTML = '';
+  
+    // Retrieve saved pairings from local storage
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  
+    // Loop through the saved pairings and display their names in the searchHistory element
+    favorites.forEach(pairing => {
+      const pairingRecipeHistory = document.createElement('div');
+      pairingRecipeHistory.classList.add('saved-pairing');
+      pairingRecipeHistory.textContent = `${pairing.foodName} & ${pairing.drinkName}`;
+      pairingRecipeHistory.setAttribute('data-food-name', pairing.foodName);
+      pairingRecipeHistory.setAttribute('data-food-instructions', pairing.foodInstructions);
+      pairingRecipeHistory.setAttribute('data-food-ingredients', pairing.foodIngredients);
+      pairingRecipeHistory.setAttribute('data-drink-name', pairing.drinkName);
+      pairingRecipeHistory.setAttribute('data-drink-instructions', pairing.drinkInstructions);
+      pairingRecipeHistory.setAttribute('data-drink-ingredients', pairing.drinkIngredients);
+  
+      // Append the pairing container to the searchHistory element
+      searchHistory.appendChild(pairingRecipeHistory);
+  
+      // Add click event listener to the saved pairing container
+      pairingRecipeHistory.addEventListener('click', () => {
+        // Retrieve the pairing details from the data attributes
+        const foodName = pairingRecipeHistory.getAttribute('data-food-name');
+        const foodInstructions = pairingRecipeHistory.getAttribute('data-food-instructions');
+        const foodIngredients = pairingRecipeHistory.getAttribute('data-food-ingredients');
+        const drinkName = pairingRecipeHistory.getAttribute('data-drink-name');
+        const drinkInstructions = pairingRecipeHistory.getAttribute('data-drink-instructions');
+        const drinkIngredients = pairingRecipeHistory.getAttribute('data-drink-ingredients');
+  
+        // Update recipe boxes with the details of the selected pairing
+        mealNameEl.innerHTML = foodName;
+        foodRecipeTextBox.innerHTML = foodInstructions;
+        mealIngredientEl.innerHTML = foodIngredients;
+        
+        drinkNameEl.innerHTML = drinkName;
+        cocktailRecipeTextBox.innerHTML = drinkInstructions;
+        drinkIngredientEl.innerHTML = drinkIngredients;
+      });
+    });
+  });
+  
+  
