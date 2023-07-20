@@ -96,10 +96,7 @@ function isPairingDataExists(pairingData, favoritesArray) {
     });
 }
 
-// Function to save the current pairing to local storage and create the "Show Favorite Recipe" button.
-/**
- * Saves the current food and drink pairing to local storage for later retrieval.
- */
+// Function to save the current pairing to local storage and create the favorite button in favorites list.
 function saveToLocalStorage(pairingData) {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
@@ -110,8 +107,7 @@ function saveToLocalStorage(pairingData) {
     }
 }
 
-// Event listener for the "Create a random food pairing" button.
-// Fetches APIs, generates a random pairing, and saves it to local storage.
+// Event listener for the "Save to Favorites" button.
 saveFavoriteButton.addEventListener('click', () => {
     // Generate pairing object
     const pairingData = {
@@ -160,7 +156,7 @@ clearBtn.addEventListener('click', () => {
     favoritesEl.innerHTML = '';
 });
 
-// Event listener for the "Show Favorite Recipe" buttons inside the favoritesEl element.
+// Event listener for the favorite buttons inside the favoritesEl element.
 favoritesEl.addEventListener('click', (event) => {
     if (event.target.classList.contains('favorite-btn')) {
         const button = event.target;
